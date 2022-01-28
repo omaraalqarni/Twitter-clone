@@ -34,26 +34,26 @@ With the following features:
   * [x] Content
 
 * [x] link to jQuery
-* [ ] Listen for form submit
-* [ ] Hide the form
-* [ ] Show loading spinner
-* [ ] Get data from form and log it
-* [ ] Get user input on the Client
-* [ ] Hide/Show elements on the client
+* [x] Listen for form submit
+* [x] Hide the form
+* [x] Show loading spinner
+* [x] Get data from form and log it
+✅ Get user input on the Client
+✅ Hide/Show elements on the client
 
 ## Back-end
 
 * [x] npm init -y
-* [x] npm install express morgan helmet 
+* [x] npm install express morgan helmet cookie-parser
 * [x] Setup index.js
 * [x] Add GET / route
-* [ ] Add POST /tweets route
-  * [ ] log out req.body
+* [x] Add POST /tweets route
+  * [x] log out req.body
 
 ## Front-end
 
-* [ ] fetch POST /tweets with form data
-* [ ] See the CORS error and revel in this moment
+* [x] fetch POST /tweets with form data
+* [ ] setup cors
 * [ ] Send user input from the client with fetch to the server
 
 ## Back-end

@@ -12,20 +12,25 @@
   <header>
     <h1 class="center">Twitter clone! 🐦</h1>
   </header>
-
-  <form action="/", method="get">
+  <div class="progress">
+    <div class="indeterminate"></div>
+</div>
+  <form action="", method="get" class=tweetForm>
     <div class="input-field container col s6 m4 ">
-      <textarea id="textarea1" class="materialize-textarea"></textarea>
-      <label for="textarea1">Username</label>
+      <textarea id="name" name="name" placeholder="username" class="materialize-textarea"></textarea>
     </div>
     <div class="input-field container col s6 m4 ">
-      <label for="textarea1">Tweet</label>
-      <textarea id="textarea1" class="materialize-textarea"></textarea>
+      <input name="tweet" placeholder="tweet" id="tweet" class="materialize-textarea"></input>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="client.js"></script>
-    
+    <div class=container>
+      <button type="submit" class="btn btn-primary blue">Submit</button>
+    </div>
   </form>
+
+  
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="client.js"></script>
   
 
 </body>
