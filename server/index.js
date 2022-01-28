@@ -9,9 +9,8 @@ const cookieParser = require('cookie-parser');
 //const cors = require('cors');
 
 app.get('/', (req, res) => {
-  res.json({ 
-    "message": "Tweeter!!🐦"
-  })
+  console.log(__dirname);
+  res.sendFile(__dirname+ "/index.html")
 });
 
 app.post('/tweets', (req, res) => {
