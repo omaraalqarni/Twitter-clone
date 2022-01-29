@@ -53,30 +53,30 @@ With the following features:
 ## Front-end
 
 * [x] fetch POST /tweets with form data
-* [ ] setup cors
-* [ ] Send user input from the client with fetch to the server
+* [x] setup cors
+* [x] Send user input from the client with fetch to the server
 
 ## Back-end
 
-* [ ] npm install cors
-* [ ] Make sure the server is recieving the data
-* [ ] Add JSON body parser middleware
+* [x] npm install cors
+* [x] Make sure the server is recieving the data
+* [x] Add JSON body parser middleware
 * [ ] Validate name and content
-  * [ ] Must be a string
-  * [ ] Cannot be empty
-* [ ] If not valid
-  * [ ] Error code 422
-  * [ ] Invalid tweet, must contain name and content
-* [ ] Setup DB Connection
-  * [ ] npm install monk
-  * [ ] connect to db
-  * [ ] create document collection (tweets)
-* [ ] If Valid
-  * [ ] Create tweet object with
-    * [ ] name, content, created_date
-  * [ ] Insert into DB
-  * [ ] Respond with created tweet object
-* [ ] Store data in a database
+  * [x] Must be a string
+  * [x] Cannot be empty
+* [x] If not valid
+  * [x] Error code 422
+  * [x] Invalid tweet, must contain name and content
+* [x] Setup DB Connection
+  * [x] npm install monk
+  * [x] connect to db
+  * [x] create document collection (tweets)
+* [x] If Valid
+  * [x] Create tweet object with
+    * [x] name, content, created_date
+  * [x] Insert into DB
+  * [x] Respond with created tweet object
+* ✅ Store data in a database
 
 ## Front-end
 

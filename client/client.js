@@ -1,4 +1,3 @@
-console.log("hi");
 const form = document.querySelector('form');
 const API_URL = 'http://localhost:6969/tweets'
 
@@ -18,12 +17,14 @@ form.addEventListener('submit',(event) => {
     $('.progress').toggle();  
   },1000);
 
-  fetch(API_URL, { 
+  fetch(API_URL, {
     method: 'POST',
     body: JSON.stringify(tweet),
-    headers: { 
-      'Content-Type': 'application/json'
+    headers: {
+      'content-type': 'application/json'
     }
+  }).then(response => response.json())
+    .then(createdTweet => {
+      console.log(createdTweet);
   });
-  console.log(tweet);
 });
