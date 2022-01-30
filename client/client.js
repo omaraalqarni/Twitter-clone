@@ -3,6 +3,7 @@ const API_URL = 'http://localhost:6969/tweets'
 
 $(".progress").toggle();
 form.addEventListener('submit',(event) => { 
+  $('.progress').toggle();
   event.preventDefault();
   const formData = new FormData(form);
   const name = formData.get('name');
@@ -11,11 +12,11 @@ form.addEventListener('submit',(event) => {
     name,
     content,
   };
-  $('.progress').toggle();  
-  setTimeout(function(){
-    // toggle back after 1 second
-    $('.progress').toggle();  
-  },1000);
+  // $('.progress').toggle();  
+  // setTimeout(function(){
+  //   // toggle back after 1 second
+  //   $('.progress').toggle();  
+  // },1000);
 
   fetch(API_URL, {
     method: 'POST',
@@ -26,5 +27,6 @@ form.addEventListener('submit',(event) => {
   }).then(response => response.json())
     .then(createdTweet => {
       console.log(createdTweet);
+      $('.progress').toggle();
   });
 });

@@ -61,7 +61,7 @@ With the following features:
 * [x] npm install cors
 * [x] Make sure the server is recieving the data
 * [x] Add JSON body parser middleware
-* [ ] Validate name and content
+* [x] Validate name and content
   * [x] Must be a string
   * [x] Cannot be empty
 * [x] If not valid

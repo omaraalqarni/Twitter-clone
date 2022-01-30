@@ -8,8 +8,8 @@ const cookieParser = require('cookie-parser');
 const cors = require('cors');
 
 const app = express();
-app.use(cors())
-app.use(express.json())
+app.use(cors());
+app.use(express.json());
 
 const db = require('monk')('localhost/twitter');
 const tweets = db.get('tweets');
@@ -28,6 +28,7 @@ app.post('/tweets', (req, res) => {
       .insert(tweet)
       .then(createdTweet => {
         res.json(createdTweet);
+        console.log(tweets);
       });
 
   } else{
@@ -38,7 +39,10 @@ app.post('/tweets', (req, res) => {
   }
 });
 
+app.get('/tweets', (req, res) => {
+  tweets.listCollections().toArray();
 
+})
 
 
 port = process.env.PORT || 6969;
