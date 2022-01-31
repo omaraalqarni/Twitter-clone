@@ -105,10 +105,10 @@ With the following features:
 
 ## Back-end
 
-* [ ] npm install bad-words
-  * [ ] Use filter before inserting into DB
-* [ ] npm install express-rate-limit
-  * [ ] Limit to 1 request every 15 seconds
+* [x] npm install bad-words
+  * [x] Use filter before inserting into DB
+* [x] npm install express-rate-limit
+  * [x] Limit to 1 request every 10 seconds
 
 ## Deploy
 

@@ -24,7 +24,12 @@ form.addEventListener('submit',(event) => {
     .then(createdTweet => {
      $('.progress').toggle();
      form.reset();
-     listAllTweets()
+  
+     setTimeout(() => {
+       form.style.display= '';
+     },30000);
+
+     listAllTweets();
   });
 });
 

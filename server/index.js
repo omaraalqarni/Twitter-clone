@@ -1,12 +1,13 @@
 const express = require('express');
-
-
 //middlewares
 const helmet = require('helmet');
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const app = express();
+
+const rateLimit = require('express-rate-limit');
+
 app.use(cors());
 app.use(express.json());
 
@@ -18,7 +19,13 @@ app.get('/', (req, res) => {
   
 });
 
-app.post('/tweets', (req, res) => {
+const limiter = rateLimit({
+  windowMs: 10 *1000,
+  max: 1,
+  standardHeaders: true,
+  legacyHeaders: false,
+});
+app.post('/tweets',limiter, (req, res) => {
   if(validateTweet(req.body)) {
     const tweet = {
       name: filter.clean(req.body.name.toString()),
