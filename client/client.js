@@ -1,6 +1,7 @@
 const form = document.querySelector('form');
-const API_URL = 'http://localhost:6969/tweets'
-
+const API_URL = 'http://localhost:6969/tweets';
+const tweetElement = document.querySelector('.tweet');
+listAllTweets();
 $(".progress").toggle();
 form.addEventListener('submit',(event) => { 
   $('.progress').toggle();
@@ -12,11 +13,6 @@ form.addEventListener('submit',(event) => {
     name,
     content,
   };
-  // $('.progress').toggle();  
-  // setTimeout(function(){
-  //   // toggle back after 1 second
-  //   $('.progress').toggle();  
-  // },1000);
 
   fetch(API_URL, {
     method: 'POST',
@@ -26,7 +22,36 @@ form.addEventListener('submit',(event) => {
     }
   }).then(response => response.json())
     .then(createdTweet => {
-      console.log(createdTweet);
-      $('.progress').toggle();
+     $('.progress').toggle();
+     form.reset();
+     listAllTweets()
   });
 });
+
+function listAllTweets() {
+  tweetElement.innerHTML = '';
+  fetch(API_URL)
+  .then(response => response.json())
+  .then(tweets => {
+    console.log(tweets);
+    tweets.reverse();
+    tweets.forEach(tweet => {
+      const div = document.createElement('div');
+
+      const header = document.createElement('h3');
+      header.textContent = tweet.name;
+      
+      const contents = document.createElement('p')
+      contents.textContent = tweet.content;
+
+      const dates = document.createElement('small');
+      dates.textContent = new Date(tweet.dateOfCreation);
+
+
+      div.appendChild(header);
+      div.appendChild(contents);
+      div.appendChild(dates);
+      tweetElement.appendChild(div);
+    });
+  });
+}

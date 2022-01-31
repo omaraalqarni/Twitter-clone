@@ -80,28 +80,28 @@ With the following features:
 
 ## Front-end
 
-* [ ] Log out created tweet after POST request
-* [ ] Show the form
-* [ ] Hide loading spinner
+* [x] Log out created tweet after POST request
+* [x] Show the form
+* [x] Hide loading spinner
 
 ## Back-end
 
-* [ ] GET /tweets
-  * [ ] Respond with tweets from DB
-* [ ] Retrieve data from a database on the Server
+* [x] GET /tweets
+  * [x] Respond with tweets from DB
+* [x] Retrieve data from a database on the Server
 
 ## Front-end
 
-* [ ] fetch GET /tweets
-  * [ ] Iterate over array
-  * [ ] Append each to page
-  * [ ] Reverse before appending
-  * [ ] Show the form
-  * [ ] Hide loading spinner
-* [ ] fetch GET /tweets after creating a tweet
-* [ ] Retrieve data from a server on the client using Fetch
-* [ ] Hide/Show elements on the client
-* [ ] Add elements to the page on the client
+* [x] fetch GET /tweets
+  *  [x] Iterate over array
+  * [x] Append each to page
+  * [x] Reverse before appending
+  * [x] Show the form
+  * [x] Hide loading spinner
+* [x] fetch GET /tweets after creating a tweet
+* [x] Retrieve data from a server on the client using Fetch
+* [x] Hide/Show elements on the client
+* [x] Add elements to the page on the client
 
 ## Back-end
 

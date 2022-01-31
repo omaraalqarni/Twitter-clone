@@ -6,11 +6,12 @@ const helmet = require('helmet');
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
-
 const app = express();
 app.use(cors());
 app.use(express.json());
 
+var Filter = require('bad-words')
+var filter = new Filter();
 const db = require('monk')('localhost/twitter');
 const tweets = db.get('tweets');
 app.get('/', (req, res) => {
@@ -20,8 +21,8 @@ app.get('/', (req, res) => {
 app.post('/tweets', (req, res) => {
   if(validateTweet(req.body)) {
     const tweet = {
-      name: req.body.name.toString(),
-      content: req.body.content.toString(),
+      name: filter.clean(req.body.name.toString()),
+      content: filter.clean(req.body.content.toString()),
       dateOfCreation: new Date()
     };
     tweets
@@ -40,9 +41,13 @@ app.post('/tweets', (req, res) => {
 });
 
 app.get('/tweets', (req, res) => {
-  tweets.listCollections().toArray();
+  tweets
+  .find()
+  .then(tweets => {
+    res.json(tweets);
+  });
 
-})
+});
 
 
 port = process.env.PORT || 6969;
