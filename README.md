@@ -113,8 +113,8 @@ With the following features:
 ## Deploy
 
 * [ ] Deploy server with now
-  * [ ] Setup environment variables
-    * [ ] Database connection
+  * [x] Setup environment variables
+    * [x] Database connection
       * process.env.MONGO_URI
   * [ ] Show mlab
   * [ ] Deploy with environment variable
