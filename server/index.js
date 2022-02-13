@@ -7,13 +7,15 @@ const cors = require('cors');
 const app = express();
 const mongoose = require('mongoose');
 const rateLimit = require('express-rate-limit');
+mongoose.connect(process.env.MONGO_URI || 'mongodb+srv://omar:509018@twitter.yphmy.mongodb.net/Twitter?retryWrites=true&w=majority')
 
 app.use(cors());
 app.use(express.json());
 
 var Filter = require('bad-words')
 var filter = new Filter();
-//const db = require('monk')(process.env.MONGO_URI || 'localhost/twitter');
+
+
 const tweets = db.get('tweets');
 app.get('/', (req, res) => {
   
